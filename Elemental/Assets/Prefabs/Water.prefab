@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5129625771475667617}
   - component: {fileID: 5129625771475667622}
   - component: {fileID: 5129625771475667619}
+  - component: {fileID: -691638656243058444}
   m_Layer: 0
   m_Name: Water
   m_TagString: Water
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5129625771475667623}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.27, y: -1.41, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -96,6 +97,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxScale: {x: 3, y: 3, z: 3}
+  Steam: {fileID: 5064089265080434384, guid: 1290b881d72886e4ca2d968f8ee4ce01, type: 3}
+  QuicSand: {fileID: 1050388486152570527, guid: 88e31c806c0245940bd39f64f3eb8d63,
+    type: 3}
+  Bubbles: {fileID: 2548447573595600324, guid: 967545cc36d6e9142a4e16f7c6e55965, type: 3}
 --- !u!61 &5129625771475667619
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -106,7 +111,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -122,3 +127,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &-691638656243058444
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5129625771475667623}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 4
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

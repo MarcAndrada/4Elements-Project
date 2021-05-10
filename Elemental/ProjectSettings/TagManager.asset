@@ -8,6 +8,12 @@ TagManager:
   - Water
   - Wind
   - Earth
+  - Steam
+  - Lava
+  - QuickSand
+  - EarthWall
+  - Tornado
+  - Bubbles
   layers:
   - Default
   - TransparentFX
@@ -42,6 +48,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2886420055
+    locked: 0
   - name: Elements
     uniqueID: 1919760405
     locked: 0

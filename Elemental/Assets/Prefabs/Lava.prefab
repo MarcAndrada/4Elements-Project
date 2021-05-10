@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1753690367920503011
+--- !u!1 &2551237548364963354
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1753690367920503010}
-  - component: {fileID: 1753690367920503013}
-  - component: {fileID: 1753690367920503012}
-  - component: {fileID: -6920577643881274820}
-  - component: {fileID: 1961752292204972456}
-  - component: {fileID: 1582445078868661126}
+  - component: {fileID: 2551237548364963332}
+  - component: {fileID: 2551237548364963355}
+  - component: {fileID: 2551237548364963333}
+  - component: {fileID: -5086972990258572834}
+  - component: {fileID: -5322557223783769595}
   m_Layer: 0
-  m_Name: Earth
-  m_TagString: Earth
+  m_Name: Lava
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1753690367920503010
+--- !u!4 &2551237548364963332
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753690367920503011}
+  m_GameObject: {fileID: 2551237548364963354}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1753690367920503013
+--- !u!212 &2551237548364963355
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753690367920503011}
+  m_GameObject: {fileID: 2551237548364963354}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 00ae56ac3d0ed6f4e8de8b9012f38e38, type: 3}
-  m_Color: {r: 0.3490566, g: 0.18843885, b: 0.04116233, a: 1}
+  m_Color: {r: 0.5566038, g: 0.10348002, b: 0.023629395, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -85,41 +84,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1753690367920503012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753690367920503011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 506e742cdce0c1d4d876d90a4773eb06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
---- !u!114 &-6920577643881274820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753690367920503011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be18a591c414f054e819057b8a0f801a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Lava: {fileID: 2551237548364963354, guid: 7f949c1767a3c6a4f85568b0ae6dca0e, type: 3}
-  QuicSand: {fileID: 1050388486152570527, guid: 88e31c806c0245940bd39f64f3eb8d63,
-    type: 3}
---- !u!61 &1961752292204972456
+--- !u!61 &2551237548364963333
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753690367920503011}
+  m_GameObject: {fileID: 2551237548364963354}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -139,14 +110,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &1582445078868661126
+--- !u!50 &-5086972990258572834
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753690367920503011}
+  m_GameObject: {fileID: 2551237548364963354}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -160,3 +131,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-5322557223783769595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2551237548364963354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a08d3d3d75f00fd46940609438ae31b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

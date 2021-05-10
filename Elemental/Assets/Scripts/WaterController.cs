@@ -5,11 +5,15 @@ using UnityEngine;
 public class WaterController : MonoBehaviour
 {
     public Vector3 MaxScale;
+    public GameObject Steam;
+    public GameObject QuicSand;
+    public GameObject Bubbles;
+
     private Vector3 MinScale = new Vector3(0, 0, 0);
     private float WaitTime = 50;
     private float WaitedTime;
     private float DisappearTime = 3000;
-    private bool DestroyWater = false; 
+    private bool DestroyWater = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,5 +48,34 @@ public class WaterController : MonoBehaviour
             Destroy(gameObject);
         }
 
+    }
+
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Fire")
+        {
+            Instantiate(Steam, transform.position, Quaternion.identity);
+
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.tag == "Earth")
+        {
+
+            Instantiate(QuicSand, transform.position, Quaternion.identity);
+
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.tag == "Wind")
+        {
+            Instantiate(Bubbles, new Vector3(transform.position.x + Random.Range(-0.35f, 0.35f) , transform.position.y + Random.Range(-0.35f, 0.35f), transform.position.z), Quaternion.identity);
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+
+        }
     }
 }
