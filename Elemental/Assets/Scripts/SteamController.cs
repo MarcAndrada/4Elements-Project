@@ -6,7 +6,7 @@ public class SteamController : MonoBehaviour
 {
 
     private Vector3 MinScale = new Vector3(0, 0, 0);
-    private float WaitTime = 75;
+    private float WaitTime = 50;
     private float WaitedTime;
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class SteamController : MonoBehaviour
 
         if (WaitedTime >= WaitTime && MinScale.x <= transform.localScale.x && MinScale.y <= transform.localScale.y)
         {
-            transform.localScale = new Vector3(transform.localScale.x - 0.01f, transform.localScale.y - 0.01f, transform.localScale.z);
+            transform.localScale = new Vector3(transform.localScale.x - 0.05f, transform.localScale.y - 0.05f, transform.localScale.z);
             WaitedTime = 0;
 
         }

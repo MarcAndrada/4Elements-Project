@@ -55,8 +55,6 @@ public class AimController : MonoBehaviour
     private GameObject rock17;
     private GameObject rock18;
 
-    private GameObject fireChildren;
-
     private Color FireColor = new Color(0.81f,0.42f,0.05f);
     private Color EarthColor = new Color(0.36f, 0.19f, 0.01f);
     private Color WaterColor = new Color(0.09f, 0.48f, 0.85f);
@@ -94,7 +92,6 @@ public class AimController : MonoBehaviour
         WaterCD += delta;
         EarthCD += delta;
 
-
         if (PlayerInput.Fire)
         {
             CurrentElementHUD.color = FireColor;
@@ -127,30 +124,22 @@ public class AimController : MonoBehaviour
                         {
                             if (PlayerInput.ShootDown)
                             {
-                                fireChildren = Instantiate(Fire, transform.position, transform.rotation * Quaternion.Euler(0, 0, 180));
-                                fireChildren.transform.parent = gameObject.transform;
-
+                                Instantiate(Fire, transform.position, transform.rotation * Quaternion.Euler(0, 0, 180));
                             }
                             else if (PlayerInput.ShootUp)
                             {
-                                fireChildren = Instantiate(Fire, transform.position, Quaternion.identity);
-                                fireChildren.transform.parent = gameObject.transform;
+                                Instantiate(Fire, transform.position, Quaternion.identity);
                             }
                             else if (PlayerInput.ShootRight)
                             {
-                                fireChildren = Instantiate(Fire, transform.position, transform.rotation * Quaternion.Euler(0, 0, 270));
-                                fireChildren.transform.parent = gameObject.transform;
+                                Instantiate(Fire, transform.position, transform.rotation * Quaternion.Euler(0, 0, 270));
+
                             }
                             else if (PlayerInput.ShootLeft)
                             {
-                                fireChildren = Instantiate(Fire, transform.position, transform.rotation * Quaternion.Euler(0, 0, 90));
-                                fireChildren.transform.parent = gameObject.transform;
+                                Instantiate(Fire, transform.position, transform.rotation * Quaternion.Euler(0, 0, 90));
                             }
-
-
                             FireCD = 0;
-
-
                         }
                         
 

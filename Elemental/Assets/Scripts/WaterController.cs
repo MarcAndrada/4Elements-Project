@@ -27,7 +27,7 @@ public class WaterController : MonoBehaviour
         WaitedTime += delta;
         if (WaitedTime >= WaitTime && MaxScale.x >= transform.localScale.x && MaxScale.y >= transform.localScale.y && MaxScale.z >= transform.localScale.z && !DestroyWater)
         {
-            transform.localScale = new Vector3(transform.localScale.x + 0.15f, transform.localScale.y + 0.15f, transform.localScale.z + 0.15f);
+            transform.localScale = new Vector3(transform.localScale.x + 0.2f, transform.localScale.y + 0.2f, transform.localScale.z + 0.2f);
             WaitedTime = 0;
         }
 
@@ -38,7 +38,7 @@ public class WaterController : MonoBehaviour
 
         if (WaitedTime >= WaitTime && MinScale.x <= transform.localScale.x && MinScale.y <= transform.localScale.y && MinScale.z <= transform.localScale.z && DestroyWater)
         {
-            transform.localScale = new Vector3(transform.localScale.x - 0.1f, transform.localScale.y - 0.1f, transform.localScale.z - 0.1f);
+            transform.localScale = new Vector3(transform.localScale.x - 0.2f, transform.localScale.y - 0.2f, transform.localScale.z - 0.2f);
             WaitedTime = 0;
 
         }
@@ -57,7 +57,7 @@ public class WaterController : MonoBehaviour
         if (collision.gameObject.tag == "Fire")
         {
             Instantiate(Steam, transform.position, Quaternion.identity);
-            Destroy(collision.gameObject);
+
             Destroy(gameObject);
         }
 
