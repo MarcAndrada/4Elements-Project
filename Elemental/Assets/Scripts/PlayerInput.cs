@@ -6,12 +6,12 @@ public class PlayerInput : MonoBehaviour
 {
     public static float Vertical
     {
-        get { return Input.GetAxis("Vertical"); }
+        get { return Input.GetAxisRaw("Vertical"); }
     }
 
     public static float Horizontal
     {
-        get { return Input.GetAxis("Horizontal"); }
+        get { return Input.GetAxisRaw("Horizontal"); }
     }
 
 
