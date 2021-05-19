@@ -4,16 +4,40 @@ using UnityEngine;
 using UnityEngine.UI;
 public class AimController : MonoBehaviour
 {
-    public GameObject Fire;
-    public GameObject Water;
-    public GameObject Wind;
-    public GameObject Earth;
     public float fireRate;
+
+    [Header("Fire")]
+    public GameObject Fire;
     public float FireFirerate;
+    private GameObject fireChildren;
+    public GameObject FireHighlighted;
+    public GameObject FireCircle;
+    private float FirecircleValue = 1;
+    private float timePassedFireCircle;
+    [Header("Water")]
+    public GameObject Water;
     public float WaterFirerate;
+    public GameObject WaterHighlighted;
+    public GameObject WaterCircle;
+    private float WatercircleValue = 1;
+    private float timePassedWaterCircle;
+
+    [Header("Wind")]
+    public GameObject Wind;
     public float WindFirerate;
+    public GameObject WindHighlighted;
+    public GameObject WindCircle;
+    private float WindcircleValue = 1;
+    private float timePassedWindCircle;
+
+    [Header("Earth")]
+    public GameObject Earth;
     public float EarthFirerate;
-    public Image CurrentElementHUD;
+    public GameObject EarthHighlighted;
+    public GameObject EarthCircle;
+    private float EarthcircleValue = 1;
+    private float timePassedEarthCircle;
+
     private Quaternion AnguloRot1;
     private Quaternion AnguloRot2;
     private Quaternion AnguloRot3;
@@ -32,7 +56,6 @@ public class AimController : MonoBehaviour
     private Quaternion AnguloRot16;
     private Quaternion AnguloRot17;
     private Quaternion AnguloRot18;
-
     private GameObject wind1;
     private GameObject wind2;
     private GameObject wind3;
@@ -55,18 +78,15 @@ public class AimController : MonoBehaviour
     private GameObject rock17;
     private GameObject rock18;
 
-    private GameObject fireChildren;
-
-    private Color FireColor = new Color(0.81f,0.42f,0.05f);
-    private Color EarthColor = new Color(0.36f, 0.19f, 0.01f);
-    private Color WaterColor = new Color(0.09f, 0.48f, 0.85f);
-    private Color WindColor = new Color(0.57f, 0.75f, 0.75f);
 
     private float TimeToShoot;
     private float FireCD;
     private float WindCD;
     private float WaterCD;
     private float EarthCD;
+
+    private float TimeToPassCircle = 0.1f;
+
 
     private enum Elements { FIRE, EARTH, WATER, WIND };
     private Elements CurrentElement;
@@ -75,8 +95,7 @@ public class AimController : MonoBehaviour
     void Start()
     {
         CurrentElement = Elements.FIRE;
-        CurrentElementHUD.color = FireColor;
-
+        FireHighlighted.SetActive(true);
     }
 
     // Update is called once per frame
@@ -97,23 +116,39 @@ public class AimController : MonoBehaviour
 
         if (PlayerInput.Fire)
         {
-            CurrentElementHUD.color = FireColor;
             CurrentElement = Elements.FIRE;
+            FireHighlighted.SetActive(true);
+            WaterHighlighted.SetActive(false);
+            WindHighlighted.SetActive(false);
+            EarthHighlighted.SetActive(false);
+
         }
         else if (PlayerInput.Water)
         {
-            CurrentElementHUD.color = WaterColor;
             CurrentElement = Elements.WATER;
+            WaterHighlighted.SetActive(true);
+            FireHighlighted.SetActive(false);
+            WindHighlighted.SetActive(false);
+            EarthHighlighted.SetActive(false);
+
         }
         else if (PlayerInput.Wind)
         {
-            CurrentElementHUD.color = WindColor;
             CurrentElement = Elements.WIND;
+            WindHighlighted.SetActive(true);
+            FireHighlighted.SetActive(false);
+            WaterHighlighted.SetActive(false);
+            EarthHighlighted.SetActive(false);
+
         }
         else if (PlayerInput.Earth)
         {
-            CurrentElementHUD.color = EarthColor;
             CurrentElement = Elements.EARTH;
+            EarthHighlighted.SetActive(true);
+            FireHighlighted.SetActive(false);
+            WaterHighlighted.SetActive(false);
+            WindHighlighted.SetActive(false);
+
         }
 
         if (PlayerInput.ShootDown || PlayerInput.ShootUp || PlayerInput.ShootRight || PlayerInput.ShootLeft)
@@ -147,7 +182,7 @@ public class AimController : MonoBehaviour
                                 fireChildren.transform.parent = gameObject.transform;
                             }
 
-
+                            FirecircleValue = 1;
                             FireCD = 0;
 
 
@@ -217,7 +252,7 @@ public class AimController : MonoBehaviour
                             rock18 = Instantiate(Earth, pos, AnguloRot18);
                             Destroy(rock18, 1f);
 
-
+                            EarthcircleValue = 1;
                             EarthCD = 0;
                         }
                         break;
@@ -227,6 +262,7 @@ public class AimController : MonoBehaviour
                         if (WaterCD >= WaterFirerate)
                         {
                             Instantiate(Water, transform.position, Quaternion.identity);
+                            WatercircleValue = 1;
                             WaterCD = 0;
                         }
                         break;
@@ -244,6 +280,7 @@ public class AimController : MonoBehaviour
                             Destroy(wind2, 1.3f);
                             wind3 = Instantiate(Wind, pos, AnguloRot3);
                             Destroy(wind3, 1.3f);
+                            WindcircleValue = 1;
                             WindCD = 0;
                         }
                         
@@ -259,5 +296,57 @@ public class AimController : MonoBehaviour
 
             }
         }
+
+        if (FirecircleValue >= 0)
+        {
+            timePassedFireCircle += Time.deltaTime;
+
+            if (timePassedFireCircle >= TimeToPassCircle)
+            {
+                FirecircleValue -= 0.022f;
+                timePassedFireCircle = 0;
+            }
+            FireCircle.GetComponent<Image>().fillAmount = FirecircleValue;
+        }
+
+        if (WatercircleValue >= 0)
+        {
+            timePassedWaterCircle += Time.deltaTime;
+
+            if (timePassedWaterCircle >= TimeToPassCircle)
+            {
+                WatercircleValue -= 0.025f;
+                timePassedWaterCircle = 0;            
+            }
+            WaterCircle.GetComponent<Image>().fillAmount = WatercircleValue;
+
+        }
+
+        if (WindcircleValue >= 0)
+        {
+            timePassedWindCircle += Time.deltaTime;
+
+            if (timePassedWindCircle >= TimeToPassCircle)
+            {
+                WindcircleValue -= 0.05f;
+                timePassedWindCircle = 0;
+            }
+            WindCircle.GetComponent<Image>().fillAmount = WindcircleValue;
+
+        }
+
+        if (EarthcircleValue >= 0)
+        {
+            timePassedEarthCircle += Time.deltaTime;
+
+            if (timePassedEarthCircle >= TimeToPassCircle)
+            {
+                EarthcircleValue -= 0.014f;
+                timePassedEarthCircle = 0;
+            }
+            EarthCircle.GetComponent<Image>().fillAmount = EarthcircleValue;
+
+        }
+
     }
 }
