@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2551237548364963333}
   - component: {fileID: -5086972990258572834}
   - component: {fileID: -5322557223783769595}
+  - component: {fileID: 7383698058728623590}
   m_Layer: 0
   m_Name: Lava
   m_TagString: Lava
@@ -144,3 +145,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08d3d3d75f00fd46940609438ae31b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &7383698058728623590
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2551237548364963354}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 16aab150291938e4f95069ccef7e585c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
