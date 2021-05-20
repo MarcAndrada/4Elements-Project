@@ -32,4 +32,12 @@ public class ChaserController : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "SpawnPoint")
+        {
+            rb2d.velocity = Vector2.zero;
+        }
+    }
 }

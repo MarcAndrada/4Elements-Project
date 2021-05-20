@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 
     /*Atributos*/
     float speed;
-
+    float life;
 
     private void Awake()
     {
@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         speed = 5;
+        life = 5;
     }
 
     // Update is called once per frame
