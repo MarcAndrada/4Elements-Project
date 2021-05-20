@@ -24,6 +24,7 @@ public class AimController : MonoBehaviour
 
     [Header("Wind")]
     public GameObject Wind;
+    public GameObject WindUp;
     public float WindFirerate;
     public GameObject WindHighlighted;
     public GameObject WindCircle;
@@ -270,15 +271,36 @@ public class AimController : MonoBehaviour
 
                         if (WindCD >= WindFirerate)
                         {
-                            Quaternion rot = transform.rotation;
+                            GameObject CurrentWind = Wind;
+                            SpriteRenderer WindSprite;
+
+                            if (PlayerInput.ShootDown)
+                            {
+                                CurrentWind = WindUp;
+                                WindSprite = CurrentWind.GetComponent<SpriteRenderer>();
+                                WindSprite.flipY = true;
+
+                            }
+                            else if (PlayerInput.ShootUp)
+                            {
+                                CurrentWind = WindUp;
+                                
+                            }
+                            else if (PlayerInput.ShootLeft)
+                            { 
+                                CurrentWind = Wind;
+                                WindSprite = CurrentWind.GetComponent<SpriteRenderer>();
+                                WindSprite.flipX = true;
+                            }
+
                             AnguloRot1 = transform.rotation * Quaternion.Euler(0, 0, 10);
                             AnguloRot2 = transform.rotation;
                             AnguloRot3 = transform.rotation * Quaternion.Euler(0, 0, -10);
-                            wind1 = Instantiate(Wind, pos, AnguloRot1);
+                            wind1 = Instantiate(CurrentWind, pos, AnguloRot1);
                             Destroy(wind1, 1.3f);
-                            wind2 = Instantiate(Wind, pos, AnguloRot2);
+                            wind2 = Instantiate(CurrentWind, pos, AnguloRot2);
                             Destroy(wind2, 1.3f);
-                            wind3 = Instantiate(Wind, pos, AnguloRot3);
+                            wind3 = Instantiate(CurrentWind, pos, AnguloRot3);
                             Destroy(wind3, 1.3f);
                             WindcircleValue = 1;
                             WindCD = 0;
