@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
 
     /*Atributos*/
     private float speed;
+    [SerializeField]
     private int life;
     private float HeartFill1 = 1;
     private float HeartFill2 = 1;
