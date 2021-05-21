@@ -274,23 +274,13 @@ public class AimController : MonoBehaviour
                             GameObject CurrentWind = Wind;
                             SpriteRenderer WindSprite;
 
-                            if (PlayerInput.ShootDown)
-                            {
-                                CurrentWind = WindUp;
-                                WindSprite = CurrentWind.GetComponent<SpriteRenderer>();
-                                WindSprite.flipY = true;
-
-                            }
-                            else if (PlayerInput.ShootUp)
-                            {
+                            if (PlayerInput.ShootDown || PlayerInput.ShootUp){
                                 CurrentWind = WindUp;
                                 
-                            }
-                            else if (PlayerInput.ShootLeft)
-                            { 
+
+                            }else if (PlayerInput.ShootLeft || PlayerInput.ShootRight){ 
                                 CurrentWind = Wind;
-                                WindSprite = CurrentWind.GetComponent<SpriteRenderer>();
-                                WindSprite.flipX = true;
+                                
                             }
 
                             AnguloRot1 = transform.rotation * Quaternion.Euler(0, 0, 10);
@@ -302,6 +292,32 @@ public class AimController : MonoBehaviour
                             Destroy(wind2, 1.3f);
                             wind3 = Instantiate(CurrentWind, pos, AnguloRot3);
                             Destroy(wind3, 1.3f);
+
+                            if (PlayerInput.ShootDown)
+                            {
+                                WindSprite = wind1.GetComponent<SpriteRenderer>();
+                                WindSprite.flipY = true;
+
+                                WindSprite = wind2.GetComponent<SpriteRenderer>();
+                                WindSprite.flipY = true;
+
+                                WindSprite = wind3.GetComponent<SpriteRenderer>();
+                                WindSprite.flipY = true;
+
+                            }
+                            else if (PlayerInput.ShootLeft)
+                            {
+                                WindSprite = wind1.GetComponent<SpriteRenderer>();
+                                WindSprite.flipX = true;
+
+                                WindSprite = wind2.GetComponent<SpriteRenderer>();
+                                WindSprite.flipX = true;
+
+                                WindSprite = wind3.GetComponent<SpriteRenderer>();
+                                WindSprite.flipX = true;
+                            }
+
+
                             WindcircleValue = 1;
                             WindCD = 0;
                         }
