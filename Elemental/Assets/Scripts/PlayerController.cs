@@ -95,6 +95,22 @@ public class PlayerController : MonoBehaviour
             animator.SetBool(upId, false);
             animator.SetBool(downId, false);
         }
+        else if (rb2d.velocity.x == 0 && rb2d.velocity.y < 0)
+        {
+            animator.SetBool(idleId, false);
+            animator.SetBool(leftId, false);
+            animator.SetBool(rightId, false);
+            animator.SetBool(upId, false);
+            animator.SetBool(downId, true);
+        }
+        else if (rb2d.velocity.x == 0 && rb2d.velocity.y > 0)
+        {
+            animator.SetBool(idleId, false);
+            animator.SetBool(leftId, false);
+            animator.SetBool(rightId, false);
+            animator.SetBool(upId, true);
+            animator.SetBool(downId, false);
+        }
 
 
         float delta = Time.deltaTime * 1000;
