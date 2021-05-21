@@ -21,8 +21,7 @@ public class PlayerController : MonoBehaviour
     private int lastHP;
     private Animator animator;
     /*Atributos*/
-    float speed;
-    float life;
+
     /*Animaciones*/
     private int upId;
     private int downId;
@@ -98,8 +97,8 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        float delta = Time.deltaTime*1000;
-        if(PlayerInput.Vertical > 0)
+        float delta = Time.deltaTime * 1000;
+        if (PlayerInput.Vertical > 0)
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, speed);
         }
@@ -125,7 +124,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        }
+
 
         if (life >= 6)
         {
@@ -180,5 +179,6 @@ public class PlayerController : MonoBehaviour
             Heart2.GetComponent<Image>().fillAmount = HeartFill2;
             Heart3.GetComponent<Image>().fillAmount = HeartFill3;
             lastHP = life;
+        }
     }
 }
