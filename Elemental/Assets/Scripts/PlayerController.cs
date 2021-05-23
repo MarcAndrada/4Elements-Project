@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public Image Heart1;
     public Image Heart2;
     public Image Heart3;
+    private Renderer rend;
 
 
     /*Atributos*/
@@ -21,6 +22,12 @@ public class PlayerController : MonoBehaviour
     private float HeartFill3 = 1;
     private int lastHP;
     private Animator animator;
+    private bool inmortal;
+    private float inmortaltimer;
+    private Color inmortalColor = Color.gray;
+    private bool dead;
+    private float deadtimer;
+    private float gametimer;
     /*Atributos*/
 
     /*Animaciones*/
@@ -33,6 +40,7 @@ public class PlayerController : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        rend = GetComponent<Renderer>();
     }
 
     // Start is called before the first frame update
@@ -48,12 +56,17 @@ public class PlayerController : MonoBehaviour
         leftId = Animator.StringToHash("Left");
         rightId = Animator.StringToHash("Right");
         idleId = Animator.StringToHash("Idle");
+        gametimer = 0;
+        inmortaltimer = 0;
+        inmortal = false;
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        gametimer += Time.deltaTime;
+     
 
         if (rb2d.velocity == Vector2.zero)
         {
@@ -115,6 +128,24 @@ public class PlayerController : MonoBehaviour
 
 
         float delta = Time.deltaTime * 1000;
+
+        if (inmortal == true)
+        {
+            gameObject.layer = 11;
+            rend.material.color = inmortalColor;
+            if (inmortaltimer <= 3000)
+            {
+                inmortaltimer += delta;
+               
+            }
+            else
+            {
+                inmortal = false;
+                gameObject.layer = 0;
+                rend.material.color = Color.white;
+                inmortaltimer = 0;
+            }
+        }
         if (PlayerInput.Vertical > 0)
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, speed);
@@ -196,6 +227,23 @@ public class PlayerController : MonoBehaviour
             Heart2.GetComponent<Image>().fillAmount = HeartFill2;
             Heart3.GetComponent<Image>().fillAmount = HeartFill3;
             lastHP = life;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            life--;
+            inmortal = true;
+            Destroy(collision.gameObject);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag=="Enemie")
+        {
+            life--;
+            inmortal = true;
         }
     }
 }

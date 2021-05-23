@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 8490959407689844943}
   - component: {fileID: 8490959407689844940}
   - component: {fileID: 1610589519617815957}
-  m_Layer: 0
+  - component: {fileID: 4747301552493578539}
+  m_Layer: 10
   m_Name: Chaser
-  m_TagString: Untagged
+  m_TagString: Enemie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -165,3 +166,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4747301552493578539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8490959407689844941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b75888138da1664782a4abacce3aa7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

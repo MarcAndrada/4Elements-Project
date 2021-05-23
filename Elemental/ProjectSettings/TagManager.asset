@@ -17,6 +17,9 @@ TagManager:
   - MusicSlider
   - SFXSlider
   - SpawnPoint
+  - WindUp
+  - Bullet
+  - Enemie
   layers:
   - Default
   - TransparentFX
@@ -27,9 +30,9 @@ TagManager:
   - 
   - 
   - Map
-  - 
-  - 
-  - 
+  - Wind
+  - Enemies
+  - Inmortal
   - 
   - 
   - 

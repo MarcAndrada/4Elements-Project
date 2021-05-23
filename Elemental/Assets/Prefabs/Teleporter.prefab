@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 6664792046969133612}
   - component: {fileID: 6664792046969133613}
   - component: {fileID: 1020048305147773716}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Teleporter
-  m_TagString: Untagged
+  m_TagString: Enemie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
