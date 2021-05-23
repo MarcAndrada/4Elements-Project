@@ -21,19 +21,20 @@ public class TimeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
-        newTime = 0;
+        bestTime = 100;
+        newTime = 20;
+        TimeReader();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (bestTime == null)
-        {
-            TimeReader();
-        }
+      
+            
+      
         if (bestTime < newTime)
         {
+            bestTime = newTime;
             TimeWrite(newTime);
             TimeReader();
         }
