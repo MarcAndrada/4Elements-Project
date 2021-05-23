@@ -33,5 +33,11 @@ public class BulletController : MonoBehaviour
         rb2d.velocity = _velocity;
 
     }
- 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == ("Map"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }

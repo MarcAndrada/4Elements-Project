@@ -12,11 +12,12 @@ public class SpawnerController : MonoBehaviour
     public GameObject Teleporter;
   
     public float timer;
+    private float gametimer;
   
     // Start is called before the first frame update
     void Start()
     {
-     
+        gametimer = 0;
         timer = 0;
     }
 
@@ -24,24 +25,111 @@ public class SpawnerController : MonoBehaviour
     void Update()
     {
         float delta = Time.deltaTime * 1000;
+        gametimer += delta;
         timer += delta;
-        if (timer >= 5000)
+
+        if(gametimer <= 30000)
         {
-            int toSpawn = Random.Range(1, 7);
-                if(toSpawn==1|| toSpawn == 3 || toSpawn == 6)
+
+
+            if (timer >= 10000)
             {
-                Instantiate(Chaser,transform);
-            }
+                int toSpawn = Random.Range(1, 7);
+                if (toSpawn == 1 || toSpawn == 3 || toSpawn == 6)
+                {
+                    Instantiate(Chaser, transform);
+                }
                 else if (toSpawn == 2 || toSpawn == 4)
-            {
-                Instantiate(Witch, transform);
+                {
+                    Instantiate(Witch, transform);
+                }
+                else if (toSpawn == 5 || toSpawn == 7)
+                {
+                    Instantiate(Teleporter, transform);
+                }
+                timer = 0;
             }
-            else if (toSpawn == 5 || toSpawn == 7)
+
+        }
+        else if   (gametimer <= 60000)
             {
-                Instantiate(Teleporter, transform);
+
+
+                if (timer >= 10000)
+                {
+                    int toSpawn = Random.Range(1, 7);
+                    if (toSpawn == 1 || toSpawn == 3 || toSpawn == 6)
+                    {
+                        Instantiate(Chaser, transform);
+                    Instantiate(Witch, transform);
+                }
+                    else if (toSpawn == 2 || toSpawn == 4)
+                    {
+                        Instantiate(Witch, transform);
+                        Instantiate(Teleporter, transform);
+                }
+                    else if (toSpawn == 5 || toSpawn == 7)
+                    {
+                        Instantiate(Teleporter, transform);
+                    }
+                    timer = 0;
+                }
+
             }
-            timer = 0;
-            
+        else if (gametimer <= 90000)
+        {
+
+
+            if (timer >= 10000)
+            {
+                int toSpawn = Random.Range(1, 7);
+                if (toSpawn == 1 || toSpawn == 3 || toSpawn == 6)
+                {
+                    Instantiate(Chaser, transform);
+                    Instantiate(Witch, transform);
+                }
+                else if (toSpawn == 2 || toSpawn == 4)
+                {
+                    Instantiate(Witch, transform);
+                    Instantiate(Teleporter, transform);
+                    Instantiate(Chaser, transform);
+                }
+                else if (toSpawn == 5 || toSpawn == 7)
+                {
+                    Instantiate(Teleporter, transform);
+                    Instantiate(Chaser, transform);
+                }
+                timer = 0;
+            }
+
+        }
+        else if (gametimer <= 120000)
+        {
+
+
+            if (timer >= 10000)
+            {
+                int toSpawn = Random.Range(1, 7);
+                if (toSpawn == 1 || toSpawn == 3 || toSpawn == 6)
+                {
+                    Instantiate(Chaser, transform);
+                    Instantiate(Chaser, transform);
+                    Instantiate(Witch, transform);
+                }
+                else if (toSpawn == 2 || toSpawn == 4)
+                {
+                    Instantiate(Witch, transform);
+                    Instantiate(Teleporter, transform);
+                    Instantiate(Chaser, transform);
+                }
+                else if (toSpawn == 5 || toSpawn == 7)
+                {
+                    Instantiate(Teleporter, transform);
+                    Instantiate(Chaser, transform);
+                    Instantiate(Witch, transform);
+                }
+                timer = 0;
+            }
 
         }
     }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7059361693610969134}
   - component: {fileID: 2401151232755684732}
   - component: {fileID: 2935783234511864746}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: WindUpDown
   m_TagString: WindUp
   m_Icon: {fileID: 0}

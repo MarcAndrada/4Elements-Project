@@ -20,6 +20,7 @@ TagManager:
   - WindUp
   - Bullet
   - Enemie
+  - Map
   layers:
   - Default
   - TransparentFX
@@ -33,7 +34,7 @@ TagManager:
   - Wind
   - Enemies
   - Inmortal
-  - 
+  - Elementos
   - 
   - 
   - 

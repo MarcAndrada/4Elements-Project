@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -66,7 +67,23 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         gametimer += Time.deltaTime;
-     
+        if (life <= 0)
+        {
+            Destroy(rb2d);
+            Destroy(rend);
+            TimeManager.Instance.setNewtime(gametimer);
+           
+            dead = true;
+        }
+        if (dead)
+        {
+            deadtimer += Time.deltaTime*1000;
+            if (deadtimer >= 2000)
+            {
+                SceneManager.LoadScene("End");
+            }
+
+        }
 
         if (rb2d.velocity == Vector2.zero)
         {

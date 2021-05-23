@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2048549299}
   - component: {fileID: 2048549300}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Circulo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 6400678727938823543}
   - component: {fileID: 8197416782626576248}
   - component: {fileID: 3644352923465653718}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tornado
   m_TagString: Tornado
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ PointEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1024
   m_ForceMagnitude: -500
   m_ForceVariation: 0
   m_DistanceScale: 1

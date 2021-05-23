@@ -18,4 +18,11 @@ public class littleBulletController : MonoBehaviour
     {
         
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == ("Map"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
