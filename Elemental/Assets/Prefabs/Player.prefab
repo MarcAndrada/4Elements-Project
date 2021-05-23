@@ -227,6 +227,11 @@ PrefabInstance:
       propertyPath: Heart3
       value: 
       objectReference: {fileID: 650022398450894594}
+    - target: {fileID: 6120862660741090762, guid: e315a0dcccb8de149b652d0fdebc1e7a,
+        type: 3}
+      propertyPath: HUDTimer
+      value: 
+      objectReference: {fileID: 9121562123280950010}
     - target: {fileID: 6120862660741090763, guid: e315a0dcccb8de149b652d0fdebc1e7a,
         type: 3}
       propertyPath: WindUp
@@ -440,18 +445,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 9121562122784014607}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &114619567517751467 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9151729575079139748, guid: 77f53c788286d794295e4d8c02d8a7e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 9121562122784014607}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &114619567320680517 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9151729575284590922, guid: 77f53c788286d794295e4d8c02d8a7e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 9121562122784014607}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &114619568831768169 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9151729576399185766, guid: 77f53c788286d794295e4d8c02d8a7e4,
@@ -461,6 +454,18 @@ GameObject:
 --- !u!1 &114619566779999858 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9151729575817389949, guid: 77f53c788286d794295e4d8c02d8a7e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 9121562122784014607}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &114619567517751467 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9151729575079139748, guid: 77f53c788286d794295e4d8c02d8a7e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 9121562122784014607}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &114619567320680517 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9151729575284590922, guid: 77f53c788286d794295e4d8c02d8a7e4,
     type: 3}
   m_PrefabInstance: {fileID: 9121562122784014607}
   m_PrefabAsset: {fileID: 0}
@@ -500,3 +505,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &9121562123280950010 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1742906357, guid: 77f53c788286d794295e4d8c02d8a7e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 9121562122784014607}
+  m_PrefabAsset: {fileID: 0}

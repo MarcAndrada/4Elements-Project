@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tornado: {fileID: 3073244103967437599, guid: e8b5768a835f5a44fbfd1420a91d5476, type: 3}
-  EarthWall: {fileID: 8353473708225536159, guid: 3f5234b4451c8f14196796a3f5efed27,
+  EarthWall: {fileID: 7789050314200769525, guid: 7e6871f35e39cd64baac52d996bf7f77,
     type: 3}
 --- !u!61 &7895461738731513914
 BoxCollider2D:

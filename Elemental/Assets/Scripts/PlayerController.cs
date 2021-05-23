@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public Image Heart1;
     public Image Heart2;
     public Image Heart3;
+    public GameObject HUDTimer;
     private Renderer rend;
 
 
@@ -66,14 +67,23 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gametimer += Time.deltaTime;
+        if (life > 0)
+        {
+            gametimer += Time.deltaTime;
+        }
+        //float TimeResult = Mathf.Round(gametimer,2);
+
+
+
+        HUDTimer.GetComponent<Text>().text = gametimer.ToString("F2"); ;
         if (life <= 0)
         {
             Destroy(rb2d);
             Destroy(rend);
+            dead = true;
             TimeManager.Instance.setNewtime(gametimer);
            
-            dead = true;
+           
         }
         if (dead)
         {
@@ -230,7 +240,7 @@ public class PlayerController : MonoBehaviour
             HeartFill2 = 0;
             HeartFill3 = 0.5f;
         }
-        else if (life == 0)
+        else if (life <= 0)
         {
             HeartFill1 = 0;
             HeartFill2 = 0;
@@ -248,7 +258,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "Bullet" && !inmortal)
         {
             life--;
             inmortal = true;
@@ -257,7 +267,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag=="Enemie")
+        if(collision.gameObject.tag=="Enemie" && !inmortal)
         {
             life--;
             inmortal = true;

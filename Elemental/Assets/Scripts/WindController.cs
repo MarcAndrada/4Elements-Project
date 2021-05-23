@@ -7,6 +7,7 @@ public class WindController : MonoBehaviour
     public GameObject Tornado;
     public GameObject EarthWall;
     private GameObject ExistTornado;
+    private GameObject Wall;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +43,8 @@ public class WindController : MonoBehaviour
 
         if (collision.gameObject.tag == "Earth")
         {
-            Instantiate(EarthWall, collision.gameObject.transform.position, Quaternion.identity);
+            Wall = Instantiate(EarthWall, collision.gameObject.transform.position, Quaternion.identity);
+            Destroy(Wall, 2.5f);
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
