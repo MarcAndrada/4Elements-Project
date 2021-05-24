@@ -142,10 +142,6 @@ public class ChaserController : MonoBehaviour
             }
         }
 
-        float deltaD = Time.deltaTime;
-        timer += deltaD;
-        if (timer > 10f) { SoundManager.PlaySound("Chaser"); }
-
     }
 
     void FixedUpdate()

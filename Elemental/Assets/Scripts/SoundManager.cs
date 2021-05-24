@@ -9,7 +9,7 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance { get; private set; }
 
     public GameObject Hijo;
-    public static AudioClip Song, Attack, Damage, ClickMenu, Combination, Witch, Teleporter, Chaser;
+    public static AudioClip Song, Attack, Damage, ClickMenu, Combination, Witch, Teleporter;
     static AudioSource audiosrc;
     static AudioSource audiosrc2;
 
@@ -43,7 +43,6 @@ public class SoundManager : MonoBehaviour
         Combination = Resources.Load<AudioClip>("Mix");
         Witch = Resources.Load<AudioClip>("Witch");
         Teleporter = Resources.Load<AudioClip>("Teleporter");
-        Chaser = Resources.Load<AudioClip>("Chaser");
 
         audiosrc = GetComponent<AudioSource>();
         audiosrc2 = Hijo.GetComponent<AudioSource>();
@@ -92,9 +91,6 @@ public class SoundManager : MonoBehaviour
                 break;
             case "Teleporter":
                 audiosrc2.PlayOneShot(Teleporter);
-                break;
-            case "Chaser":
-                audiosrc2.PlayOneShot(Chaser);
                 break;
         }
     }

@@ -331,7 +331,7 @@ public class AimController : MonoBehaviour
                
 
                 TimeToShoot = 0;
-
+                SoundManager.PlaySound("Attack");
             }
         }
 

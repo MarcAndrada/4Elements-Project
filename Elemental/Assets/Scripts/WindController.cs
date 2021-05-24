@@ -34,8 +34,9 @@ public class WindController : MonoBehaviour
             if (ExistTornado == null)
             {
                 Instantiate(Tornado, transform.position, Quaternion.identity);
+                SoundManager.PlaySound("Mix");
             }
-            
+
             Destroy(collision.gameObject);
 
             Destroy(gameObject);
@@ -43,6 +44,7 @@ public class WindController : MonoBehaviour
 
         if (collision.gameObject.tag == "Earth")
         {
+            SoundManager.PlaySound("Mix");
             Wall = Instantiate(EarthWall, collision.gameObject.transform.position, Quaternion.identity);
             Destroy(Wall, 2.5f);
             Destroy(collision.gameObject);

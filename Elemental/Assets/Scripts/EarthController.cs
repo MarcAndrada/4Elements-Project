@@ -21,6 +21,7 @@ public class EarthController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Fire")
         {
+            SoundManager.PlaySound("Mix");
             Instantiate(Lava, transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
             Destroy(gameObject);

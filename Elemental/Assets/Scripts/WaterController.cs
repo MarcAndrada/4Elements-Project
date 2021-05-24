@@ -56,6 +56,7 @@ public class WaterController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Fire")
         {
+            SoundManager.PlaySound("Mix");
             Instantiate(Steam, transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
             Destroy(gameObject);
@@ -63,6 +64,7 @@ public class WaterController : MonoBehaviour
 
         if (collision.gameObject.tag == "Earth")
         {
+            SoundManager.PlaySound("Mix");
 
             Instantiate(QuicSand, transform.position, Quaternion.identity);
 
@@ -72,6 +74,7 @@ public class WaterController : MonoBehaviour
 
         if (collision.gameObject.tag == "Wind")
         {
+            SoundManager.PlaySound("Mix");
             Instantiate(Bubbles, new Vector3(transform.position.x + Random.Range(-0.35f, 0.35f) , transform.position.y + Random.Range(-0.35f, 0.35f), transform.position.z), Quaternion.identity);
             Destroy(collision.gameObject);
             Destroy(gameObject);
