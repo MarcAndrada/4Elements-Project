@@ -178,6 +178,7 @@ public class TeleporterController : MonoBehaviour
         GameObject inst = Instantiate(bullet, this.transform.position, bullet.transform.rotation);
         DarkBulletController bc = inst.GetComponent<DarkBulletController>();
         bc.setVelocity(v.normalized * this.bulletSpeed);
+        SoundManager.PlaySound("Teleporter");
     }
 
 

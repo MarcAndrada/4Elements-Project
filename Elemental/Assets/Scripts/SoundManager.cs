@@ -88,13 +88,13 @@ public class SoundManager : MonoBehaviour
                 audiosrc2.PlayOneShot(Combination);
                 break;
             case "Witch":
-                audiosrc2.PlayOneShot(Combination);
+                audiosrc2.PlayOneShot(Witch);
                 break;
             case "Teleporter":
-                audiosrc2.PlayOneShot(Combination);
+                audiosrc2.PlayOneShot(Teleporter);
                 break;
             case "Chaser":
-                audiosrc2.PlayOneShot(Combination);
+                audiosrc2.PlayOneShot(Chaser);
                 break;
         }
     }

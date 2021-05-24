@@ -28,6 +28,8 @@ public class ChaserController : MonoBehaviour
     private int leftId;
     private int rightId;
 
+    float timer;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -139,6 +141,10 @@ public class ChaserController : MonoBehaviour
                 rend.material.color = Color.white;
             }
         }
+
+        float deltaD = Time.deltaTime;
+        timer += deltaD;
+        if (timer > 1.2f) { SoundManager.PlaySound("Chaser"); }
 
     }
 

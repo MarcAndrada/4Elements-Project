@@ -174,6 +174,7 @@ public class WitchController : MonoBehaviour
         GameObject inst = Instantiate(bullet, this.transform.position , bullet.transform.rotation);
         BulletController bc = inst.GetComponent<BulletController>();
         bc.setVelocity(v.normalized * this.bulletSpeed);
+        SoundManager.PlaySound("Witch");
     }
     void OnDrawGizmosSelected()
     {
