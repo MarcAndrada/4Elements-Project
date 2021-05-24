@@ -144,7 +144,7 @@ public class ChaserController : MonoBehaviour
 
         float deltaD = Time.deltaTime;
         timer += deltaD;
-        if (timer > 1.2f) { SoundManager.PlaySound("Chaser"); }
+        if (timer > 10f) { SoundManager.PlaySound("Chaser"); }
 
     }
 
