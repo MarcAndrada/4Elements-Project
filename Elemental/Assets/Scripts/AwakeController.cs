@@ -20,6 +20,6 @@ public class AwakeController : MonoBehaviour
     {
         float delta = Time.deltaTime;
         timer += delta;
-        if (timer > 1.8f) SceneManager.LoadScene("MainMenu");
+        if (timer > 1.2f) SceneManager.LoadScene("MainMenu");
     }
 }

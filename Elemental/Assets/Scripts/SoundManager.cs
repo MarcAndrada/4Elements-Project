@@ -9,12 +9,12 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance { get; private set; }
 
     public GameObject Hijo;
-    public static AudioClip Song;
+    public static AudioClip Song, Attack, Damage, ClickMenu, Combination, Witch, Teleporter, Chaser;
     static AudioSource audiosrc;
     static AudioSource audiosrc2;
 
-    Scene currentScene;
-    string sceneName;
+    //Scene currentScene;
+    //string sceneName;
 
     private float musicVolume = 0.1f;
     private float sfxVolume = 0.1f;
@@ -36,7 +36,14 @@ public class SoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Song = Resources.Load<AudioClip>("SongGame");
+        Attack = Resources.Load<AudioClip>("Attack");
+        Damage = Resources.Load<AudioClip>("Damage");
+        ClickMenu = Resources.Load<AudioClip>("ClickMenu");
+        Combination = Resources.Load<AudioClip>("Mix");
+        Witch = Resources.Load<AudioClip>("Witch");
+        Teleporter = Resources.Load<AudioClip>("Teleporter");
+        Chaser = Resources.Load<AudioClip>("Chaser");
 
         audiosrc = GetComponent<AudioSource>();
         audiosrc2 = Hijo.GetComponent<AudioSource>();
@@ -44,23 +51,7 @@ public class SoundManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentScene = SceneManager.GetActiveScene();
-        sceneName = currentScene.name;
-        //if (!audiosrc.isPlaying)
-        //{
-        //    if ((sceneName == "MainMenu" || sceneName == "GameOver" || sceneName == "Win" || sceneName == "Intro3"))
-        //    {
-        //        PlaySound("Song");
-        //    }
-        //    else if (sceneName == "Start")
-        //    {
-        //        PlaySound("IntroSong");
-        //    }
-        //    else
-        //    {
-        //        PlaySound("SongGame");
-        //    }
-        //}
+        if (!audiosrc.isPlaying) { PlaySound("SongGame"); }
 
         audiosrc.volume = musicVolume;
 
@@ -76,16 +67,34 @@ public class SoundManager : MonoBehaviour
         sfxVolume = vol;
     }
 
-    /*private void CheckCollisions()
-    {
-       
-    }*/
     public static void StopSound() { audiosrc.Stop(); }
     public static void PlaySound(string clip)
     {
         switch (clip)
         {
-            case "Song":
+            case "SongGame":
+                audiosrc.PlayOneShot(Song);
+                break;
+            case "Attack":
+                audiosrc2.PlayOneShot(Attack);
+                break;
+            case "Damage":
+                audiosrc2.PlayOneShot(Damage);
+                break;
+            case "ClickMenu":
+                audiosrc2.PlayOneShot(ClickMenu);
+                break;
+            case "Mix":
+                audiosrc2.PlayOneShot(Combination);
+                break;
+            case "Witch":
+                audiosrc2.PlayOneShot(Combination);
+                break;
+            case "Teleporter":
+                audiosrc2.PlayOneShot(Combination);
+                break;
+            case "Chaser":
+                audiosrc2.PlayOneShot(Combination);
                 break;
         }
     }

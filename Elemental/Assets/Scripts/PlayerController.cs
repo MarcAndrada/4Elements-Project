@@ -260,6 +260,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet" && !inmortal)
         {
+            SoundManager.PlaySound("Damage");
             life--;
             inmortal = true;
             Destroy(collision.gameObject);
@@ -269,6 +270,7 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.gameObject.tag=="Enemie" && !inmortal)
         {
+            SoundManager.PlaySound("Damage");
             life--;
             inmortal = true;
         }
